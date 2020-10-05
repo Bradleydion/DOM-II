@@ -31,3 +31,28 @@ window.addEventListener("keydown", (e) => {
     allFtr.style.backgroundColor = "yellow";
   }
 });
+const loGo = document.querySelector(".logo-heading ")
+console.log (loGo)
+window.addEventListener("load",(e)=>{
+    loGo.remove();
+})
+
+
+// wheel
+function zoom(event) {
+    event.preventDefault();
+  
+    scale += event.deltaY * -0.01;
+  
+    // Restrict scale
+    scale = Math.min(Math.max(.125, scale), 4);
+  
+    // Apply scale transform
+    el.style.transform = `scale(${scale})`;
+  }
+  
+  let scale = 1;
+  const el = anotherPhoto;
+  anotherPhoto.onwheel = zoom;
+
+  
