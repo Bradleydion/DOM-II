@@ -26,33 +26,37 @@ const allFtr = document.querySelector(".footer");
 window.addEventListener("keydown", (e) => {
   if (e.key === "a") {
     allFtr.style.backgroundColor = "#D3D3D3";
-  } 
-  else {
+  } else {
     allFtr.style.backgroundColor = "yellow";
   }
 });
-const loGo = document.querySelector(".logo-heading ")
-console.log (loGo)
-window.addEventListener("load",(e)=>{
-    loGo.remove();
+const loGo = document.querySelector(".logo-heading ");
+console.log(loGo);
+window.addEventListener("load", (e) => {
+  loGo.remove();
+});
+const story = document.getElementsByClassName("intro");
+console.log(story);
+window.addEventListener("resize", (e) => {
+  story[0].style.backgroundColor = "pink";
+  e.stopPropagation();
+});
+window.addEventListener("keyup",(e)=>{
+ navBar.style.backgroundColor="purple";
 })
-
-
 // wheel
 function zoom(event) {
-    event.preventDefault();
-  
-    scale += event.deltaY * -0.01;
-  
-    // Restrict scale
-    scale = Math.min(Math.max(.125, scale), 4);
-  
-    // Apply scale transform
-    el.style.transform = `scale(${scale})`;
-  }
-  
-  let scale = 1;
-  const el = anotherPhoto;
-  anotherPhoto.onwheel = zoom;
+  event.preventDefault();
 
-  
+  scale += event.deltaY * -0.01;
+
+  // Restrict scale
+  scale = Math.min(Math.max(0.125, scale), 4);
+
+  // Apply scale transform
+  el.style.transform = `scale(${scale})`;
+}
+
+let scale = 1;
+const el = anotherPhoto;
+anotherPhoto.onwheel = zoom;
